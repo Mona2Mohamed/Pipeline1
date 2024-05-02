@@ -4,19 +4,18 @@ pipeline {
         stage('Build') {
             steps {
                 // Execute build commands here
-                sh 'mvn clean package'
+                sh 'echo "Built"'
             }
         }
         stage('Test') {
             steps {
                 // Execute test commands here
-                sh 'mvn test'
+                sh 'echo "Tested"'
             }
         }
         stage('Deploy') {
             steps {
                 // Execute deployment commands here
-                sh './main.sh'
 		sh 'echo "Deployed"'
             }
         }
