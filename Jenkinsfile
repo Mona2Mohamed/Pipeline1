@@ -3,20 +3,22 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                sh 'echo "Building..."'
+                // Execute build commands here
+                sh 'mvn clean package'
             }
         }
         stage('Test') {
             steps {
-                // Replace this with your test commands
-                sh 'echo "Testing..."'
+                // Execute test commands here
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
             steps {
-                // Replace this with your deploy commands
-                sh 'echo "Deploying.."'
+                // Execute deployment commands here
+                sh './main.sh'
+		sh 'echo "Deployed"'
             }
-        }
-    }
+        }
+    }
 }
